@@ -1,0 +1,23 @@
+
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+a {
+    text-decoration: none;
+}
+.nav-menu-area {
+    display: flex;
+    justify-content: space-between;
+}
+ul {
+    display: flex;
+    gap: 20px;
+}
+ul li {
+    list-style: none;
+    
+}
+ul li a {
+    text-decoration: none;
+}

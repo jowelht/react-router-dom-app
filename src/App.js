@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import AboutUs from './conponents/about';
+import Deshboard from './conponents/deshboard';
+import Header from './conponents/header';
+import Home from './conponents/home';
+import Login from './conponents/login';
+import PrivateOutlet from './conponents/privateoutlet';
+import PrivateRouter from './conponents/privateRouter'
+import Services from './conponents/services';
+import './style.css'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <Header />
+            <div className="container">
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/about" element={<AboutUs/>}/>
+                    <Route path="/login" element={<Login/>}/>
+                    {/* Way One */}
+                    {/* <Route path="/deshboard/*" element={
+                        <PrivateRouter>
+                            <Deshboard/>
+                        </PrivateRouter>
+                    }/> */}
+                    {/* Way Two */}
+                    <Route path='/*' element={<PrivateOutlet/>}>
+                        <Route path='deshboard' element={<Deshboard title="Deshboard"/>}/>
+                        <Route path='services' element={<Services/>}/>
+                    </Route>
+                </Routes>
+            </div>
+        </>
+    );
 }
 
 export default App;
