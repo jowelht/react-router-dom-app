@@ -1,5 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import AboutUs from './conponents/about';
+import Blog from './conponents/blog';
+import BlogDetails from './conponents/blog-details';
 import Deshboard from './conponents/deshboard';
 import Header from './conponents/header';
 import Home from './conponents/home';
@@ -18,6 +20,7 @@ function App() {
                     <Route path="/" element={<Home/>}/>
                     <Route path="/about" element={<AboutUs/>}/>
                     <Route path="/login" element={<Login/>}/>
+                    <Route path="/blog" element={<Blog/>}/>
                     {/* Way One */}
                     {/* <Route path="/deshboard/*" element={
                         <PrivateRouter>
